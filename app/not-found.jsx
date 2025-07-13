@@ -1,19 +1,11 @@
 
 import { Suspense } from 'react'
+import NotFoundContent from './not-found-content'
 
 export default function NotFound() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <NotFoundContent />
     </Suspense>
-  )
-}
-
-function NotFoundContent() {
-  // You can use useSearchParams here if needed
-  return (
-    <div>
-      <h1>404 - Page Not Found</h1>
-    </div>
   )
 }
