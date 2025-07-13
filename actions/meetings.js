@@ -3,7 +3,7 @@
 import { db } from "@/lib/prisma";
 import { currentUser } from "@clerk/nextjs/server";
 import { google } from "googleapis";
-
+import { redirect } from "next/navigation";
 
 async function getGoogleToken(clerkUserId) {
   try {
@@ -32,7 +32,7 @@ async function getGoogleToken(clerkUserId) {
 export async function getUserMeetings(type = "upcoming") {
   const user = await currentUser();
   if (!user) {
-    throw new Error("Unauthorized");
+    redirect("/sign-in");
   }
 
   const dbUser = await db.user.findUnique({
