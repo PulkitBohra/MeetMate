@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgresql://PulkitBohra:npg_dnilIEcJf6w2@ep-soft-river-aebnsxhm-pooler.c-2.us-east-2.aws.neon.tech/Meetmate?sslmode=require&channel_binding=require"
 }
 
 model User{
