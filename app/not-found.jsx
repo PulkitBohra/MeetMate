@@ -1,7 +1,19 @@
+
+import { Suspense } from 'react'
+
 export default function NotFound() {
   return (
-    <div className="text-4xl font-extrabold w-screen pt-96 grid place-items-center">
+    <Suspense fallback={<div>Loading...</div>}>
+      <NotFoundContent />
+    </Suspense>
+  )
+}
+
+function NotFoundContent() {
+  // You can use useSearchParams here if needed
+  return (
+    <div>
       <h1>404 - Page Not Found</h1>
     </div>
-  );
+  )
 }
