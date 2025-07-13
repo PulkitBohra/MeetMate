@@ -1,12 +1,7 @@
-"use client";
-
-import { useSearchParams } from "next/navigation";
-
-export default function NotFoundClient() {
-  const params = useSearchParams();
-  const message = params.get("message") || "404 - Page Not Found";
-
+export default function NotFound() {
   return (
-    <h1 className="text-4xl font-extrabold">{message}</h1>
+    <div className="text-4xl font-extrabold w-screen pt-96 grid place-items-center">
+      <h1>404 - Page Not Found</h1>
+    </div>
   );
 }
